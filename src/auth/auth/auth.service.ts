@@ -12,9 +12,9 @@ export class AuthService {
       this.http.post(
         'http://host.docker.internal:8086/auth/realms/dicenter/protocol/openid-connect/token',
         new URLSearchParams({
-          client_id: 'nest2',
+          client_id: process.env.CLIENT_ID,
           client_secret: process.env.CLIENT_SECRET,
-          grant_type: 'password',
+          grant_type: process.env.GRANT_TYPE,
           username,
           password,
         }),
